@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mail Simulator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+
+  <div class="masthead">
+    <div class="masthead-left">
+      <svg class="postmark-logo" viewBox="0 0 54 54">
+        <circle cx="27" cy="27" r="24" fill="none" stroke="#1E2A45" stroke-width="2.5"/>
+        <circle cx="27" cy="27" r="19" fill="none" stroke="#1E2A45" stroke-width="1"/>
+        <path d="M10 20 L27 32 L44 20" fill="none" stroke="#1E2A45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="10" y="16" width="34" height="22" fill="none" stroke="#1E2A45" stroke-width="2" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <h1>Mail Simulator</h1>
+        <p>sorting office &mdash; two-user demo exchange</p>
+      </div>
+    </div>
+    <div class="clock" id="clock"></div>
+  </div>
+
+  <div class="layout">
+
+    <div>
+      <p class="rail-title">Mailboxes</p>
+      <div id="mailboxList"></div>
+      <button class="compose-btn" id="composeBtn" type="button">+ New message</button>
+    </div>
+
+    <div class="pane">
+      <div class="pane-head">
+        <h2 id="inboxOwner">Inbox</h2>
+        <span id="inboxCount"></span>
+      </div>
+      <div id="emailList"></div>
+    </div>
+
+    <div class="pane">
+      <div class="letter-wrap" id="letterWrap"></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <h3>Compose message</h3>
+    <div class="field">
+      <label>From</label>
+      <input type="text" id="fromField" disabled>
+    </div>
+    <div class="field">
+      <label>To</label>
+      <select id="toField"></select>
+    </div>
+    <div class="field">
+      <label>Subject</label>
+      <input type="text" id="subjectField" placeholder="Subject line">
+    </div>
+    <div class="field">
+      <label>Body</label>
+      <textarea id="bodyField" placeholder="Write your message&hellip;"></textarea>
+    </div>
+    <div class="modal-actions">
+      <button class="ghost" id="cancelBtn" type="button">Cancel</button>
+      <button class="primary" id="sendBtn" type="button">Send</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
